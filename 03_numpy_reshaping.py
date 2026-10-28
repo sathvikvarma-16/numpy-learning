@@ -26,10 +26,12 @@ arr = np.array([1,2,3,4,5,6])
 print(arr) # [1 2 3 4 5 6]
 print(arr.shape) # (6,) -> 6 elements 1 dimension 
 
+
 """ now we can reshape it into 2 rows and 3 columns """
 arr2 = arr.reshape(2,3)
 print(arr2) # [[1 2 3] [4 5 6]]
 print(arr2.shape) # the data didn't change, only the structure changes i.e (2,3)
+
 
 """
 the most important rule of reshape is the elements must remain the same
@@ -121,7 +123,7 @@ print(arr.shape) # (5,)
 print(arr.reshape(1,-1)) # [[1 2 3 4 5]] -> given we want 1 row hence columns are automatically calculated to be 5
 print(arr.reshape(-1,1)) # [[1] [2] [3] [4] [5]] -> given we want 1 column hence rows are automatically calculated to be 5
 print(np.expand_dims(arr, axis=0)) # [[1 2 3 4 5]] -> adds a row
-print(arr[np.newaxis,:]) # [[1 2 3 4 5]]
+print(arr[np.newaxis,:]) # [[1 2 3 4 5]] new axis is used to add a new axis (dimension) to the array, effectively converting it from a 1D array to a 2D row vector. means adding a row
 print(arr[None,:]) # [[1 2 3 4 5]] -> None acts as an alias for np.newaxis(), It inserts a new dimension of size 1 at the specified position (index 0 here).
 print(arr[:,None]) # [[1] [2] [3] [4] [5]] -> adds a column
 print(arr.reshape(-1,1))  # [[1]/ [2]/ [3]/ [4]/ [5]] -> given we want 1 columns here it automatically calculates rows to be 5
